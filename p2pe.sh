@@ -1,5 +1,5 @@
 cd /opt
-wget https://updates.peer2profit.com/p2pclient
+wget https://img.zeruns.tech/down/p2pclient
 chmod +x p2pclient
 
 cat >/etc/systemd/system/Peer2Profit.service <<EOL
